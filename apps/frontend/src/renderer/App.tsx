@@ -392,8 +392,8 @@ export function App() {
       const updatedTask = tasks.find(
         (t) => t.id === selectedTask.id || t.specId === selectedTask.specId
       );
-      if (updatedTask && updatedTask !== selectedTask) {
-        setSelectedTask(updatedTask);
+      if (updatedTask !== selectedTask) {
+        setSelectedTask(updatedTask || null);
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally omit selectedTask object to prevent infinite re-render loop
